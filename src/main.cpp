@@ -15,19 +15,15 @@ int WINAPI WinMain(
     static LogFile logfile;
     WindowCreateInfo createinfo(hInstance, hPrevInstance, lpCmdLine, nShowCmd);
     VulkanRenderer renderer(createinfo);
-    try{
-        std::array<QueueInfo, 2> flags = {
-            QueueInfo(VK_QUEUE_GRAPHICS_BIT, std::vector<float> {1.0}),
-            QueueInfo(VK_QUEUE_COMPUTE_BIT, std::vector<float> {1.0})
-        };
-        VkPhysicalDeviceFeatures features {};
-        features.multiDrawIndirect = VK_TRUE;
-        features.geometryShader = VK_TRUE;
-        features.tessellationShader = VK_TRUE;
-        renderer.addLogicalDevice(flags, features);
-    }catch (std::runtime_error error){
-        //qFatal(std::string("VulkanRenderer: "+std::string(error.what())).data());
-    }
+    std::array<QueueInfo, 2> flags = {
+        QueueInfo(VK_QUEUE_GRAPHICS_BIT, std::vector<float> {1.0}),
+        QueueInfo(VK_QUEUE_COMPUTE_BIT, std::vector<float> {1.0})
+    };
+    VkPhysicalDeviceFeatures features {};
+    features.multiDrawIndirect = VK_TRUE;
+    features.geometryShader = VK_TRUE;
+    features.tessellationShader = VK_TRUE;
+    renderer.addLogicalDevice(flags, features);
     uint16_t index = 0;
     std::array <uint64_t, (std::numeric_limits<uint8_t>::max)()> frametimes;
     while (renderer.keepRendering()){

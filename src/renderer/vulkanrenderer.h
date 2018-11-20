@@ -9,7 +9,8 @@
 class VulkanRenderer final
 {
 public:
-    VulkanRenderer(WindowCreateInfo &windowcreateinfo,
+    VulkanRenderer(
+            WindowCreateInfo &windowcreateinfo,
             const std::vector<const char *> &enablelayers = std::vector<const char *> {
                 "VK_LAYER_LUNARG_standard_validation"
                 }
