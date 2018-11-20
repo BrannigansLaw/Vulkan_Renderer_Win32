@@ -43,7 +43,7 @@ Win32::Win32(WindowCreateInfo &windowcreateinfo)
     window = CreateWindowEx(
                 WS_EX_CLIENTEDGE,
                 L"Null",
-                L"Artic Engine",
+                L"Vulkan Renderer",
                 WS_OVERLAPPEDWINDOW,
                 static_cast<int>(0x80000000),
                 static_cast<int>(0x80000000),

@@ -35,8 +35,8 @@ VulkanRenderer::VulkanRenderer(
     //Setup application info...
     VkApplicationInfo appInfo;
     appInfo.sType = VK_STRUCTURE_TYPE_APPLICATION_INFO;
-    appInfo.pApplicationName = "Artic Engine";
-    appInfo.pEngineName = "Artic Engine";
+    appInfo.pApplicationName = "Vulkan Renderer";
+    appInfo.pEngineName = "Vulkan Renderer";
     appInfo.pNext = nullptr;
     appInfo.applicationVersion = 1;
     appInfo.engineVersion = 1;
